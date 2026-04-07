@@ -53,10 +53,17 @@ fun HomeScreen(){
     ) {
 
         //TopAppBar
+        val appBarColors = TopAppBarDefaults.topAppBarColors(
+            containerColor = orange2,
+            titleContentColor = Color.White,
+            navigationIconContentColor = Color.White,
+            actionIconContentColor = Color.White
+        )
+
         TopAppBar(
             title = { Text(text = "Home") },
 
-
+            colors = appBarColors,
 
             navigationIcon = {
                 IconButton(onClick = { /* open menu */ }) {
@@ -68,41 +75,17 @@ fun HomeScreen(){
             },
 
             actions = {
-
-                // Notification button
                 IconButton(onClick = { /* open notifications */ }) {
-                    Icon(
-                        imageVector = Icons.Default.Notifications,
-                        contentDescription = "Notifications"
-                    )
+                    Icon(Icons.Default.Notifications, contentDescription = "Notifications")
                 }
-
-                // Share button
                 IconButton(onClick = { /* share content */ }) {
-                    Icon(
-                        imageVector = Icons.Default.Share,
-                        contentDescription = "Share"
-                    )
+                    Icon(Icons.Default.Share, contentDescription = "Share")
                 }
-
-                // Cart button
                 IconButton(onClick = { /* open cart */ }) {
-                    Icon(
-                        imageVector = Icons.Default.ShoppingCart,
-                        contentDescription = "Shopping Cart"
-                    )
+                    Icon(Icons.Default.ShoppingCart, contentDescription = "Shopping Cart")
                 }
             }
-
         )
-        val appBarColors = TopAppBarDefaults.topAppBarColors(
-            containerColor = orange2,
-            titleContentColor = Color.White,
-            navigationIconContentColor = Color.White,
-            actionIconContentColor = Color.White
-        )
-
-
 
         //End of TopAppBar
 
