@@ -11,11 +11,14 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Email
+import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -32,11 +35,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.josemaria.markethub.R
 import com.josemaria.markethub.ui.theme.orange2
 
 @Composable
-fun RegisterScreen(){
+fun RegisterScreen(navController: NavController){
 
     Column(
         modifier = Modifier
@@ -81,8 +86,13 @@ fun RegisterScreen(){
             value = username,
             onValueChange = { username = it },
             modifier = Modifier.width(350.dp),
-            leadingIcon = { Icon(imageVector = Icons.Default.Person, contentDescription = "")},
-            label = { Text(text = "username")}
+            leadingIcon = { Icon(imageVector = Icons.Default.Person, contentDescription = "",tint = orange2)},
+            label = { Text(text = "username")},
+            colors = OutlinedTextFieldDefaults.colors(
+                focusedBorderColor = orange2,
+                unfocusedBorderColor = orange2,
+                cursorColor = orange2
+            )
         )
 
 
@@ -90,8 +100,13 @@ fun RegisterScreen(){
             value = email,
             onValueChange = { email = it },
             modifier = Modifier.width(350.dp),
-            leadingIcon = { Icon(imageVector = Icons.Default.Person, contentDescription = "")},
-            label = { Text(text = "email")}
+            leadingIcon = { Icon(imageVector = Icons.Default.Email, contentDescription = "",tint = orange2)},
+            label = { Text(text = "email")},
+            colors = OutlinedTextFieldDefaults.colors(
+                focusedBorderColor = orange2,
+                unfocusedBorderColor = orange2,
+                cursorColor = orange2
+            )
         )
 
 
@@ -99,8 +114,14 @@ fun RegisterScreen(){
             value = password,
             onValueChange = { password = it },
             modifier = Modifier.width(350.dp),
-            leadingIcon = { Icon(imageVector = Icons.Default.Person, contentDescription = "")},
-            label = { Text(text = "password")}
+            leadingIcon = { Icon(imageVector = Icons.Default.Lock, contentDescription = "", tint = orange2)},
+
+            label = { Text(text = "password")},
+            colors = OutlinedTextFieldDefaults.colors(
+                focusedBorderColor = orange2,
+                unfocusedBorderColor = orange2,
+                cursorColor = orange2,
+            )
         )
 
 
@@ -109,8 +130,13 @@ fun RegisterScreen(){
             value = confirmpassword,
             onValueChange = { confirmpassword = it },
             modifier = Modifier.width(350.dp),
-            leadingIcon = { Icon(imageVector = Icons.Default.Person, contentDescription = "")},
-            label = { Text(text = "confirmpassword")}
+            leadingIcon = { Icon(imageVector = Icons.Default.Lock, contentDescription = "",tint = orange2)},
+            label = { Text(text = "confirmpassword")},
+            colors = OutlinedTextFieldDefaults.colors(
+                focusedBorderColor = orange2,
+                unfocusedBorderColor = orange2,
+                cursorColor = orange2
+            )
         )
 
         Spacer(modifier = Modifier.height(20.dp))
@@ -173,5 +199,5 @@ fun RegisterScreen(){
 @Composable
 fun RegisterScreenPreview(){
 
-    RegisterScreen()
+    RegisterScreen(rememberNavController())
 }

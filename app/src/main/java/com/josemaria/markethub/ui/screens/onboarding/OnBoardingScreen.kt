@@ -24,11 +24,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.josemaria.markethub.R
 import com.josemaria.markethub.ui.theme.orange2
 
 @Composable
-fun OnBoardingScreen(){
+fun OnBoardingScreen(navController: NavController){
 
     Column(
         modifier = Modifier
@@ -117,7 +119,7 @@ fun OnBoardingScreen(){
 @Composable
 fun OnBoardingScreenPreview(){
 
-    OnBoardingScreen()
+    OnBoardingScreen(rememberNavController())
 
 
 
