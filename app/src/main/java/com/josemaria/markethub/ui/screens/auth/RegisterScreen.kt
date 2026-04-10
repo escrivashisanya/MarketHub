@@ -38,6 +38,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.josemaria.markethub.R
+import com.josemaria.markethub.navigation.ROUT_LOGIN
 import com.josemaria.markethub.ui.theme.orange2
 
 @Composable
@@ -154,7 +155,7 @@ fun RegisterScreen(navController: NavController){
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        TextButton(onClick = {}) {
+        TextButton(onClick = {navController.navigate(ROUT_LOGIN)}) {
             Text(text = "Already have an account?  Login")
         }
 

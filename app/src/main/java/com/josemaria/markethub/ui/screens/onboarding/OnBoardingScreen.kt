@@ -27,6 +27,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.josemaria.markethub.R
+import com.josemaria.markethub.navigation.ROUT_REGISTER
 import com.josemaria.markethub.ui.theme.orange2
 
 @Composable
@@ -87,7 +88,7 @@ fun OnBoardingScreen(navController: NavController){
 
 
         Button(
-            onClick = {},
+            onClick = { navController.navigate(ROUT_REGISTER)},
             colors = ButtonDefaults.buttonColors(containerColor = orange2),
             shape = RoundedCornerShape(size = 10.dp),
             modifier = Modifier.width(350.dp)

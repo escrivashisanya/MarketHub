@@ -37,6 +37,8 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.josemaria.markethub.R
+import com.josemaria.markethub.navigation.ROUT_HOME
+import com.josemaria.markethub.navigation.ROUT_REGISTER
 import com.josemaria.markethub.ui.theme.orange2
 
 @Composable
@@ -145,8 +147,8 @@ fun LoginScreen(navController: NavController){
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        TextButton(onClick = {}) {
-            Text(text = "Don't have an account?  Register")
+        TextButton(onClick = {navController.navigate(ROUT_HOME)}) {
+            Text(text = "Go to Home")
         }
 
 
