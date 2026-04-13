@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.material.icons.filled.Notifications
@@ -80,8 +81,8 @@ fun HomeScreen(navController: NavController){
                 IconButton(onClick = { /* open notifications */ }) {
                     Icon(Icons.Default.Notifications, contentDescription = "Notifications")
                 }
-                IconButton(onClick = { /* share content */ }) {
-                    Icon(Icons.Default.Share, contentDescription = "Share")
+                IconButton(onClick = { navController.navigate(_root_ide_package_.com.josemaria.markethub.navigation.ROUT_INTENT) }) {
+                    Icon(Icons.Default.ArrowForward, contentDescription = "Share")
                 }
                 IconButton(onClick = { /* open cart */ }) {
                     Icon(Icons.Default.ShoppingCart, contentDescription = "Shopping Cart")

@@ -10,6 +10,7 @@ import com.josemaria.markethub.ui.screens.about.AboutScreen
 import com.josemaria.markethub.ui.screens.auth.LoginScreen
 import com.josemaria.markethub.ui.screens.auth.RegisterScreen
 import com.josemaria.markethub.ui.screens.home.HomeScreen
+import com.josemaria.markethub.ui.screens.intent.IntentScreen
 import com.josemaria.markethub.ui.screens.onboarding.OnBoardingScreen
 import com.josemaria.markethub.ui.screens.payments.PaymentScreen
 import com.josemaria.markethub.ui.screens.service.ServiceScreen
@@ -52,6 +53,10 @@ fun AppNavHost(
 
         composable(ROUT_SERVICE) {
             ServiceScreen(navController)
+        }
+
+        composable(ROUT_INTENT) {
+            IntentScreen(navController)
         }
 
 
