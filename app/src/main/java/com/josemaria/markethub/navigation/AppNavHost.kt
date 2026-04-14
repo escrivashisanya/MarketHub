@@ -13,14 +13,16 @@ import com.josemaria.markethub.ui.screens.home.HomeScreen
 import com.josemaria.markethub.ui.screens.intent.IntentScreen
 import com.josemaria.markethub.ui.screens.onboarding.OnBoardingScreen
 import com.josemaria.markethub.ui.screens.payments.PaymentScreen
+import com.josemaria.markethub.ui.screens.scaffold.ScaffoldScreen
 import com.josemaria.markethub.ui.screens.service.ServiceScreen
+import com.josemaria.markethub.ui.screens.splash.SplashScreen
 
 
 @Composable
 fun AppNavHost(
     modifier: Modifier = Modifier,
     navController: NavHostController = rememberNavController(),
-    startDestination: String = ROUT_ONBOARDING
+    startDestination: String = ROUT_SPLASH
 ) {
 
     NavHost(
@@ -57,6 +59,16 @@ fun AppNavHost(
 
         composable(ROUT_INTENT) {
             IntentScreen(navController)
+        }
+
+
+        composable(ROUT_SPLASH) {
+            SplashScreen(navController)
+        }
+
+
+        composable(ROUT_SCAFFOLD) {
+            ScaffoldScreen(navController)
         }
 
 
