@@ -101,10 +101,12 @@ fun HomeScreen(navController: NavController){
         var search by remember { mutableStateOf("") }
         TextField(
             value = search,
-            onValueChange = { search =it },
-            modifier = Modifier.padding(start = 10.dp, end = 10.dp).fillMaxWidth(),
-            leadingIcon = { Icon(imageVector = Icons.Default.Search, contentDescription = "")},
-            placeholder = {  Text(text = "Search products,category...")}
+            onValueChange = { search = it },
+            modifier = Modifier
+                .padding(start = 10.dp, end = 10.dp)
+                .fillMaxWidth(),
+            leadingIcon = { Icon(imageVector = Icons.Default.Search, contentDescription = "") },
+            placeholder = { Text(text = "Search products,category...") }
 
         )
 
@@ -127,14 +129,18 @@ fun HomeScreen(navController: NavController){
         //Row
 
         Row(
-            modifier = Modifier.padding(20.dp).horizontalScroll(rememberScrollState())
+            modifier = Modifier
+                .padding(20.dp)
+                .horizontalScroll(rememberScrollState())
         ) {
 
             Column() {
                 Image(
                     painter = painterResource(R.drawable.electronics),
                     contentDescription = "electronics",
-                    modifier = Modifier.size(200.dp).clip(shape = RoundedCornerShape(20.dp)),
+                    modifier = Modifier
+                        .size(200.dp)
+                        .clip(shape = RoundedCornerShape(20.dp)),
                     contentScale = ContentScale.Crop
 
                 )
@@ -152,7 +158,9 @@ fun HomeScreen(navController: NavController){
                 Image(
                     painter = painterResource(R.drawable.electronics),
                     contentDescription = "electronics",
-                    modifier = Modifier.size(200.dp).clip(shape = RoundedCornerShape(20.dp)),
+                    modifier = Modifier
+                        .size(200.dp)
+                        .clip(shape = RoundedCornerShape(20.dp)),
                     contentScale = ContentScale.Crop
 
                 )
@@ -170,7 +178,9 @@ fun HomeScreen(navController: NavController){
                 Image(
                     painter = painterResource(R.drawable.electronics),
                     contentDescription = "electronics",
-                    modifier = Modifier.size(200.dp).clip(shape = RoundedCornerShape(20.dp)),
+                    modifier = Modifier
+                        .size(200.dp)
+                        .clip(shape = RoundedCornerShape(20.dp)),
                     contentScale = ContentScale.Crop
 
                 )
@@ -189,7 +199,9 @@ fun HomeScreen(navController: NavController){
                 Image(
                     painter = painterResource(R.drawable.electronics),
                     contentDescription = "electronics",
-                    modifier = Modifier.size(200.dp).clip(shape = RoundedCornerShape(20.dp)),
+                    modifier = Modifier
+                        .size(200.dp)
+                        .clip(shape = RoundedCornerShape(20.dp)),
                     contentScale = ContentScale.Crop
 
                 )
@@ -207,7 +219,9 @@ fun HomeScreen(navController: NavController){
                 Image(
                     painter = painterResource(R.drawable.electronics),
                     contentDescription = "electronics",
-                    modifier = Modifier.size(200.dp).clip(shape = RoundedCornerShape(20.dp)),
+                    modifier = Modifier
+                        .size(200.dp)
+                        .clip(shape = RoundedCornerShape(20.dp)),
                     contentScale = ContentScale.Crop
 
                 )

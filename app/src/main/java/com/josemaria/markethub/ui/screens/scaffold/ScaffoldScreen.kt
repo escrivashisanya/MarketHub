@@ -38,6 +38,7 @@ import androidx.test.espresso.base.Default
 import com.josemaria.markethub.ui.theme.orange2
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
+import com.josemaria.markethub.navigation.ROUT_HOME
 
 
 @Composable
@@ -54,7 +55,7 @@ fun ScaffoldScreen(navController: NavController){
         //TopBar
         topBar = {
             TopAppBar(
-                title = { Text("Contact Screen") },
+                title = { Text("Scaffold Screen") },
                 navigationIcon = {
                     IconButton(onClick = { /* Handle back/nav */ }) {
                         Icon(Icons.Default.ArrowBack, contentDescription = "Black")
@@ -68,21 +69,24 @@ fun ScaffoldScreen(navController: NavController){
             )
         },
 
+
+
+
         //BottomBar
         bottomBar = {
             NavigationBar(
                 containerColor = orange2
             ){
                 NavigationBarItem(
-                    icon = { Icon(Icons.Default.Home, contentDescription = "Home") },
+                    icon = { Icon(Icons.Default.Home, contentDescription = "Home", tint = Color.Black) },
                     label = { Text("Home") },
                     selected = selectedIndex == 0,
                     onClick = { selectedIndex = 0
-                        //navController.navigate(ROUT_HOME)
+                        navController.navigate(ROUT_HOME)
                     }
                 )
                 NavigationBarItem(
-                    icon = { Icon(Icons.Default.Favorite, contentDescription = "Favorites") },
+                    icon = { Icon(Icons.Default.Favorite, contentDescription = "Favorites", tint = Color.Black) },
                     label = { Text("Favorites") },
                     selected = selectedIndex == 1,
                     onClick = { selectedIndex = 1
@@ -90,7 +94,7 @@ fun ScaffoldScreen(navController: NavController){
                     }
                 )
                 NavigationBarItem(
-                    icon = { Icon(Icons.Default.Person, contentDescription = "Profile") },
+                    icon = { Icon(Icons.Default.Person, contentDescription = "Profile", tint = Color.Black) },
                     label = { Text("Profile") },
                     selected = selectedIndex == 2,
                     onClick = { selectedIndex = 2
@@ -98,14 +102,7 @@ fun ScaffoldScreen(navController: NavController){
                     }
                 )
 
-                NavigationBarItem(
-                    icon = { Icon(Icons.Default.Person, contentDescription = "Profile") },
-                    label = { Text("Profile") },
-                    selected = selectedIndex == 2,
-                    onClick = { selectedIndex = 2
-                        //  navController.navigate(ROUT_HOME)
-                    }
-                )
+
 
             }
         },
@@ -128,9 +125,7 @@ fun ScaffoldScreen(navController: NavController){
 
 
                 //Main Contents of the page
-                Text(text = "Welcome to Homescreen Screen", fontSize = 20.sp)
-                Spacer(modifier = Modifier.height(8.dp))
-                Text("This is where the main content goes.")
+
 
 
 
