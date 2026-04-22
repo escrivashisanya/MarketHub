@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "720612029153",
+    "project_id": "markethub-1dd8b",
+    "storage_bucket": "markethub-1dd8b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:720612029153:android:d3e77d7efd11ae8fafbda0",
+        "android_client_info": {
+          "package_name": "com.josemaria.markethub"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBfVL_nqk98QWErjDlKc59FffsgElPhLE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

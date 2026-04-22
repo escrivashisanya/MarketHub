@@ -30,6 +30,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.paint
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -38,6 +39,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.josemaria.markethub.R
+import com.josemaria.markethub.data.AuthViewModel
 import com.josemaria.markethub.navigation.ROUT_LOGIN
 import com.josemaria.markethub.ui.theme.orange2
 
@@ -144,8 +146,12 @@ fun RegisterScreen(navController: NavController){
 
 
 
+        val context = LocalContext.current
+        val authViewModel = AuthViewModel(navController, context)
         Button(
-            onClick = {},
+            onClick = {
+                authViewModel.signup(username, email, password,confirmpassword)
+            },
             colors = ButtonDefaults.buttonColors(containerColor = orange2),
             shape = RoundedCornerShape(size = 10.dp),
             modifier = Modifier.width(350.dp)

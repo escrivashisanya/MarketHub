@@ -29,6 +29,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.paint
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -37,6 +38,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.josemaria.markethub.R
+import com.josemaria.markethub.data.AuthViewModel
 import com.josemaria.markethub.navigation.ROUT_HOME
 import com.josemaria.markethub.navigation.ROUT_REGISTER
 import com.josemaria.markethub.ui.theme.orange2
@@ -86,18 +88,7 @@ fun LoginScreen(navController: NavController){
 
 
 
-        OutlinedTextField(
-            value = username,
-            onValueChange = { username = it },
-            modifier = Modifier.width(350.dp),
-            leadingIcon = { Icon(imageVector = Icons.Default.Person, contentDescription = "",tint = orange2)},
-            label = { Text(text = "username")},
-            colors = OutlinedTextFieldDefaults.colors(
-                focusedBorderColor = orange2,
-                unfocusedBorderColor = orange2,
-                cursorColor = orange2
-            )
-        )
+
 
 
 
@@ -135,9 +126,13 @@ fun LoginScreen(navController: NavController){
 
 
 
+        val context = LocalContext.current
+        val authViewModel = AuthViewModel(navController, context)
 
         Button(
-            onClick = {},
+            onClick = {
+                authViewModel.login(email, password)
+            },
             colors = ButtonDefaults.buttonColors(containerColor = orange2),
             shape = RoundedCornerShape(size = 10.dp),
             modifier = Modifier.width(350.dp)
@@ -150,37 +145,6 @@ fun LoginScreen(navController: NavController){
         TextButton(onClick = {navController.navigate(ROUT_HOME)}) {
             Text(text = "Go to Home")
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
