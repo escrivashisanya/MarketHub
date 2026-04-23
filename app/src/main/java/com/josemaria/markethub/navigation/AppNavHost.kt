@@ -3,9 +3,11 @@ package com.josemaria.markethub.navigation
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.josemaria.markethub.ui.screens.about.AboutScreen
 import com.josemaria.markethub.ui.screens.auth.LoginScreen
 import com.josemaria.markethub.ui.screens.auth.RegisterScreen
@@ -13,6 +15,9 @@ import com.josemaria.markethub.ui.screens.home.HomeScreen
 import com.josemaria.markethub.ui.screens.intent.IntentScreen
 import com.josemaria.markethub.ui.screens.onboarding.OnBoardingScreen
 import com.josemaria.markethub.ui.screens.payments.PaymentScreen
+import com.josemaria.markethub.ui.screens.products.AddProductScreen
+import com.josemaria.markethub.ui.screens.products.UpdateProductScreen
+import com.josemaria.markethub.ui.screens.products.ViewProductScreen
 import com.josemaria.markethub.ui.screens.scaffold.ScaffoldScreen
 import com.josemaria.markethub.ui.screens.service.ServiceScreen
 import com.josemaria.markethub.ui.screens.splash.SplashScreen
@@ -71,6 +76,18 @@ fun AppNavHost(
             ScaffoldScreen(navController)
         }
 
+
+        composable(ROUTE_ADD_PRODUCT) { AddProductScreen(navController) }
+
+        composable(ROUTE_VIEW_PRODUCTS) { ViewProductScreen(navController) }
+
+        composable(
+            ROUTE_UPDATE_PRODUCT,
+            arguments = listOf(navArgument("productId") { type = NavType.StringType })
+        ) { backStackEntry ->
+            val productId = backStackEntry.arguments?.getString("productId")!!
+            UpdateProductScreen(navController, productId)
+        }
 
 
 

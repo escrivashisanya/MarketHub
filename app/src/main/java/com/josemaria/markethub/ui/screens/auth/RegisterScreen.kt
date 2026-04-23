@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -134,7 +133,7 @@ fun RegisterScreen(navController: NavController){
             onValueChange = { confirmpassword = it },
             modifier = Modifier.width(350.dp),
             leadingIcon = { Icon(imageVector = Icons.Default.Lock, contentDescription = "",tint = orange2)},
-            label = { Text(text = "confirmpassword")},
+            label = { Text(text = "confirm password")},
             colors = OutlinedTextFieldDefaults.colors(
                 focusedBorderColor = orange2,
                 unfocusedBorderColor = orange2,
@@ -164,29 +163,6 @@ fun RegisterScreen(navController: NavController){
         TextButton(onClick = {navController.navigate(ROUT_LOGIN)}) {
             Text(text = "Already have an account?  Login")
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

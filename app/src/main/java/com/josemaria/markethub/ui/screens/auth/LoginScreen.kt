@@ -12,7 +12,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Lock
-import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
@@ -40,7 +39,6 @@ import androidx.navigation.compose.rememberNavController
 import com.josemaria.markethub.R
 import com.josemaria.markethub.data.AuthViewModel
 import com.josemaria.markethub.navigation.ROUT_HOME
-import com.josemaria.markethub.navigation.ROUT_REGISTER
 import com.josemaria.markethub.ui.theme.orange2
 
 @Composable
@@ -78,10 +76,8 @@ fun LoginScreen(navController: NavController){
 
         //Variables
 
-        var username by remember { mutableStateOf("") }
         var email by remember { mutableStateOf("") }
         var password by remember { mutableStateOf("") }
-        var confirmpassword by remember { mutableStateOf("") }
 
 
 
