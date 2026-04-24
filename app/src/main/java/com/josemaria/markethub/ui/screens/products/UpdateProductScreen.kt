@@ -117,9 +117,9 @@ fun UpdateProductScreen(navController: NavController, productId: String) {
                     AnimatedContent(
                         targetState = imageUri.value,
                         label = "Image Picker Animation"
-                    ) { targeturi ->
+                    ) { targetUri ->
                         AsyncImage(
-                            model = imageUri.value ?: product!!.imageUrl,
+                            model = targetUri ?: product!!.imageUrl,
                             contentDescription = "Product Image",
                             contentScale = ContentScale.Crop,
                             modifier = Modifier.fillMaxSize()
